@@ -26,5 +26,10 @@ export const removeSpaces = (str) => {
   if (str) {
     return str.toString().replace(/\s/g, "");
   }
-  return;
+  return str;
+};
+
+export const getDate = () => {
+  const now = new Date();
+  return `${now.toDateString()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 };

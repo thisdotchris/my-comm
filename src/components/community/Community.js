@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import actions from "./../../redux/actions";
 import CommunityItem from "./CommunityItem";
@@ -123,9 +123,7 @@ class Community extends Component {
       _id: this.props.currentUser._id,
       communities: [
         ...this.props.currentUser.communities
-          .filter((c) => {
-            if (c._id !== comm._id) return c;
-          })
+          .filter((c) => c._id !== comm._id)
           .map((i) => i._id),
       ],
     }).then((res) => {
@@ -164,7 +162,7 @@ class Community extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="border p-2 m-2">
         <div className="clearfix">
           <h6 className="float-left">My Communities</h6>
           <span
@@ -189,7 +187,7 @@ class Community extends Component {
             return this.item(comm);
           })}
         </ul>
-      </Fragment>
+      </div>
     );
   }
 }

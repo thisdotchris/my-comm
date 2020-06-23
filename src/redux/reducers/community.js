@@ -38,9 +38,9 @@ export default function (state = initialState, action) {
       });
     case actionTypes.DELETE_COMMUNITY:
       return produce(state, (draftState) => {
-        draftState.myCommunities = draftState.myCommunities.filter((i) => {
-          if (i._id !== action.payload._id) return i;
-        });
+        draftState.myCommunities = draftState.myCommunities.filter(
+          (i) => i._id !== action.payload._id
+        );
       });
     case actionTypes.UPDATE_COMMUNITY:
       return produce(state, (draftState) => {

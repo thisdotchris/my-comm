@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 
 // components
 import Community from "./components/community/Community";
+import Feed from "./components/feed/Feed";
 
 // services
 import UserService from "./services/User";
@@ -34,8 +35,10 @@ class App extends Component {
           <div className="col-md-3">
             <Community />
           </div>
-          <div className="col-md-6 bg-warning">Feed Component</div>
-          <div className="col-md-3 bg-danger">Chat Component</div>
+          <div className="col-md-6">
+            <Feed />
+          </div>
+          <div className="col-md-3">Chat Component</div>
         </div>
       </div>
     );
